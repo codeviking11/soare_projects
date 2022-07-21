@@ -1,0 +1,329 @@
+# Data Types
+int(1)
+float(1.2)
+bool(True)
+str("Hi")
+
+
+list([1, 2, "hi", True])
+tuple((1, 2, "hi"))
+set({1, 2, True})
+dict({
+    "a": 1
+})
+
+# Numbers
+assert type(1) == int
+assert type(1.2) == float
+
+
+# Math Functions
+assert abs(-20) == 20
+assert round(3.6) == 4
+
+# Augumented Assignment Operator
+x = 1
+x += 1
+
+# Strings
+username = "_codeviking"
+
+# String Concatenation
+assert "Hello " + username == "Hello _codeviking"
+
+
+# Type Conversion
+str(100)
+
+# Escape Sequence
+weather = 'It\'s kind of sunny'
+
+# F-strings
+name = username
+age = 26
+
+print(f"Hi my name is {name}, and I have {age}")
+
+# String Indexes
+st = "12345"
+print(st[1])
+
+# String Slicing
+print(st[0:4:2])
+print(st[::-1])
+
+
+# Lists
+emag_cart = ['laptop', 'ipad', "tv", 1, 5]
+print(emag_cart[0])
+
+# List Slicing
+print(emag_cart[0::2])
+
+# Easy copy of a list into a new list
+new_cart = emag_cart[:]
+
+
+# List Unpacking
+a, b, c, *other, d = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(a)
+print(b)
+print(c)
+print(other)
+print(d)
+
+# Dictionaries
+dictionary = {
+    'a': [1, 2, 3],
+    'b': 'Hi',
+    'c': True
+}
+print(dictionary[a][0])
+
+# Tuples
+tpl = (1, 2, 3, 4, 5)
+
+# Set
+my_set = {1, 2, 3}
+
+# Logical Conditions
+a == b
+a != b
+a < b
+a <= b
+a > b
+a >= b
+
+
+# If Else statements
+if a == b:
+    print("If")
+
+elif a > b:
+    print("Else If")
+else:
+    print('If nothing works do this')
+
+# Ternary Operator
+# condition_if_true if condition else condition_if_false
+
+is_friend = True
+can_dm = 'message allowed' if is_friend == True else 'message denied'
+
+# Logical Operators
+user1 = True
+user2 = True
+user3 = False
+
+if user1 and user2:
+    print(True)
+
+if user1 or user3:
+    print(True)
+
+if user1 is not user3:
+    print('True')
+
+if user1 in user2:
+    print('True')
+
+
+# For Loops
+for i in range(1, 4):
+    print(i*2)
+
+# Nested Loops
+for i in (1, 2):
+    for x in (a, b, c):
+        print(i, x)
+
+# Sum of a list using For Lopps
+li3 = [1, 2, 3]
+counter = 0
+for number in li3:
+    counter += number
+
+
+# While Loops
+i = 1
+while i < 5:
+    print(i)
+    if i == 3:
+        break
+    i += 1
+
+
+# Functions
+def sum_numbers(number1, number2):
+    total = number1 + number2
+    return total
+
+
+print(sum_numbers(1, 2))
+
+
+# Keyword Arguments
+
+
+def say_hello(name, second_name):
+    return f"Hi {name} {second_name}"
+
+
+say_hello(second_name="Pitt", nume="Brad")
+
+# Default Parameters
+
+
+def say_hello1(name="Leonardo", second="DiCaprio"):
+    return f"Hi {name} {second}"
+
+
+say_hello()
+
+
+# DocStrings
+def test(a):
+    '''
+    This is a DocString
+    '''
+    print(a)
+
+# *args
+
+
+def super_func(*args):
+    return sum(args)
+
+
+print(super_func(1, 2, 3, 4, 5, 6))
+
+# **kwargs
+
+
+def super_func(**kwargs):
+    total = 0
+    for item in kwargs.values():
+        total += total + item
+    return total
+
+
+# Walrus Operator
+
+a = "abc"
+if (length := len(a)) > 1:
+    print(f"too long {length} elements")
+
+
+# OOP
+
+class Person:
+    class_attribute = 'Value'
+
+    def __init__(self, param1, param2, power):
+        self.param1 = param1
+        self.param2 = param2
+        self.power = power
+
+    def function1(self):
+        pass  # code
+
+    @classmethod
+    def cls_method(cls, param1, param2):
+        pass
+
+    @staticmethod
+    def stc_method(param1, param2):
+        pass
+
+
+class Student(Person):
+    def __init__(self, param1, param2, age, power):
+        super().__init__(power)
+        self.param1 = param1
+        self.param2 = param2
+        self.age = age
+
+
+obj1 = Student('John', "Snow", 3)
+print(obj1.function1())
+
+
+# map(func, iter)
+def multiply_by2(i):
+    return i*2
+
+
+x = map(multiply_by2, [1, 2, 3])
+
+# filter(func, sequence)
+
+
+def only_odd(item):
+    return i % 2 != 0
+
+
+seq = [1, 2, 3, 4, 5, 6]
+
+y = filter(only_odd, seq)
+
+# zip
+
+my_list = [1, 2, 3]
+your_list = [10, 20, 30]
+
+z = zip(my_list, your_list)
+print(list(z))
+
+
+# Lambda Expressions
+#lambda arguments: expression
+
+my_list = [1, 2, 3]
+print(list(filter(lambda item: item % 2 == 0, my_list)))
+
+# Decorators
+
+
+def my_decorator(func):
+    def wrap_func():
+        print('***********')
+        func()
+        print("AAAAAAA")
+
+    return wrap_func
+
+
+@my_decorator  # decorator
+def hello():
+    print('hello')
+
+
+# Error Handling
+
+while True:
+    try:
+        age = int(input('What age are you?'))
+        10 / age
+        raise ValueError('Hey cut it out')
+    except ZeroDivisionError:
+        print('Write nr higher than 0')
+        break
+    else:
+        print('Thank you')
+    finally:
+        print('Done')
+
+
+# Generators
+
+def gen_fun(num):
+    for i in range(num):
+        yield i
+
+
+for i in gen_fun(100):
+    print(i)
+
+# Modules
+
+from selenium import webdriver
